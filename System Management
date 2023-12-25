@@ -1,0 +1,88 @@
+#!/bin/bash
+# Topic: System Management
+# Linux machine update, downgrade, CLI Red Hat Linux Install, AWS CLI Installation
+
+# Linux machine update
+
+set -e
+
+# Usage: ./system_management.sh
+
+# Validating you are in the correct folder
+pwd
+
+# Navigate to the specified folder
+cd companyA
+
+# Checks for available updates
+sudo yum -y check-update
+
+# Applying security updates
+sudo yum -y update --security
+
+# Updating all packages
+sudo yum -y upgrade
+
+# Viewing installed packages and their versions
+yum list installed | grep ssh
+
+# Downgrading a package update through the yum package manager
+
+# Become root
+sudo su
+
+# View history updates (Make note of ID column for EC2)
+sudo yum history list
+
+# Most recent set of updates & view details of specific transactions.
+sudo yum history info <ec2_column_number_from_history_list>
+
+# AWS CLI Red Hat Linux Install
+
+# Verifying python installation
+python3 --version
+
+# Verifying pip package manager installation (pip = package manager for python)
+pip3 --version
+
+# CURL command for AWS CLI Installation
+
+# Reminder: File name after command "-o" ("-o awscliv2.zip") differs depending on the file and system
+# "-o" specifies the file name that the downloaded package will be written to
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+# AWS Command Line Interface (CLI) installation file with curl command
+unzip awscliv2.zip
+
+# Unzip the installation file, and a directory named aws is created under the current directory.
+sudo ./aws/install
+
+# Run the installation program.
+aws help
+
+# Verify AWS CLI runs
+q  # Exit
+
+# Configure the AWS CLI to connect to your AWS account
+
+aws configure
+
+# Open the credential file
+sudo nano ~/.aws/credentials
+
+# Press Ctrl + O to save the file and Enter to save the file as the original file name
+# Press Ctrl + X to exit the file
+
+# AWS management console to find your instance ID
+# Enter EC2
+# Press Resources, choose instance (running)
+# Find command host, copy & paste instance ID for command host into the text editor
+
+aws ec2 describe-instance-attribute --instance-id i-1234567890abcdefg --attribute instanceType
+
+# Replace <ec2_column_number_from_history_list> with the actual EC2 column number from the output of the 'sudo yum history list' command
+
+# Replace i-1234567890abcdefg with the actual EC2 instance ID when using the 'aws ec2 describe-instance-attribute' command
+
+
+# Open terminal, paste command with a new instance ID.
