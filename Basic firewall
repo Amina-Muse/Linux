@@ -1,0 +1,11 @@
+#!/bin/bash
+# Enable Firewall and Allow SSH and HTTP
+
+# Activates the UFW firewall.
+sudo ufw enable
+
+# Allows incoming SSH connections (assuming the default SSH port).
+sudo ufw allow ssh
+
+# Allows incoming TCP connections on port 80, commonly used for HTTP.
+sudo ufw allow 80/tcp
