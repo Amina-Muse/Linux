@@ -1,0 +1,63 @@
+# System Administration Commands
+
+pwd  : Print Working Directory
+   - Displays the current working directory.
+
+ls : List
+   - Lists files and directories in the current directory.
+
+cd : Change Directory
+   - Changes the current working directory.
+
+mkdir : Make Directory
+   - Creates a new directory.
+
+cp : Copy
+   - Copies files or directories.
+
+mv : Move
+   - Moves or renames files or directories.
+
+rm : Remove
+   - Removes files or directories. USE WITH CAUTION. ⚠️ 
+
+cat : Concatenate and Display
+   - Displays the content of a file.
+
+echo
+   - Displays a message or writes it to a file.
+
+man : Manual
+    - Displays the manual or help documentation for a command.
+
+grep : Global Regular Expression Print
+    - Searches for a specific pattern in files.
+
+chmod : Change Mode
+    - Changes file permissions.
+
+sudo : Superuser Do
+    - Executes a command with superuser privileges.
+
+df : Disk Free
+    - Displays disk space usage.
+
+top
+    - Shows system resource usage and running processes.
+
+adduser
+    - Adds a new user to the system.
+
+apt-get : Advanced Package Tool
+    - Manages software packages. Used for installation, upgrades, and removal.
+
+crontab : Cron Table
+    - Edits the cron table for scheduled tasks.
+
+ping
+    - Tests network connectivity to a specific host.
+
+uname : Unix Name
+    - Displays system information, including the kernel name and version.
+
+#These commands cover essential Linux tasks for system administrators. Copy and use them as needed for your system administration work.
